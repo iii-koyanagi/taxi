@@ -39,5 +39,27 @@ class Distance {
             'DE' => 720,
             'FG' => 230,
             'EG' => 1050);
+
+        $check = false;
+        foreach ($dis_arr as $key => $value) {
+            if ($key === $data) {
+                $distance = $value;
+                $check = 1;
+            }
+        }
+
+        if ($check === false) {
+            $one = substr($data, 0, 1);
+            $two = substr($data, 1, 1);
+
+            $reverse = $two.$one;
+            foreach ($dis_arr as $key => $value) {
+                if ($key === $reverse) {
+                    $distance = $value;
+                }
+            }
+        }
+
+        var_dump($distance);
     }
 } 

@@ -44,10 +44,19 @@ class taxiTest extends \PHPUnit_Framework_TestCase
 
     public function testDistance()
     {
-        $data = 'CDFGEDABG';
+//        $data = 'CDFGEDABG';
+//        $distance = new Distance();
+//        $edit = $distance->edit($data);
+
+        $data = 'GE';
         $distance = new Distance();
-        $edit = $distance->edit($data);
+        $test = $distance->getDistance($data);
+
+
+
     }
+
+
 
 
 }
