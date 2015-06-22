@@ -24,4 +24,20 @@ class Distance {
 
         return $arr;
     }
+
+    public function getDistance($data)
+    {
+        $dis_arr = array(
+            'AB' => 1090,
+            'AC' => 180,
+            'AD' => 540,
+            'BC' => 960,
+            'BG' => 1270,
+            'CD' => 400,
+            'CF' => 200,
+            'FD' => 510,
+            'DE' => 720,
+            'FG' => 230,
+            'EG' => 1050);
+    }
 } 
