@@ -8,5 +8,18 @@ namespace TripleI\taxi;
 
 class taxi
 {
+    public function firstCityCheck($data)
+    {
+        $firstAlphabet = substr($data, 0, 1);
+        $enrai = array('A', 'B', 'C');
 
+        if (in_array($firstAlphabet, $enrai)) {
+            $firstCity = True;
+        }
+        else {
+            $firstCity = False;
+        }
+
+        return $firstCity;
+    }
 }

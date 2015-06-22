@@ -26,4 +26,13 @@ class taxiTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException('\TripleI\taxi\Exception\LogicException');
         throw new Exception\LogicException;
     }
+
+    public function testFirstCityCheck()
+    {
+        $data = 'ADFC';
+        $taxi = new taxi();
+        $firstCity = $taxi->firstCityCheck($data);
+
+        $this->assertEquals(True, $firstCity);
+    }
 }
