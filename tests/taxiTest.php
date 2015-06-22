@@ -41,4 +41,13 @@ class taxiTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(false, $firstCity);
     }
+
+    public function testDistance()
+    {
+        $data = 'CDFGEDABG';
+        $distance = new Distance();
+        $edit = $distance->edit($data);
+    }
+
+
 }

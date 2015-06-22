@@ -13,16 +13,15 @@ class Distance {
 
     public function edit($data)
     {
+        $count = strlen($data);
+        $arr = array();
+        for ($i = 0; $i <= $count; $i++) {
+            $rest = substr($data, $i, 2);
+            if (strlen($rest) === 2) {
+                array_push($arr, $rest);
+            }
+        }
 
+        return $arr;
     }
-
-//    public function getEnraiDistance($data)
-//    {
-//        var_dump($data);
-//    }
-//
-//    public function getTansuDistance($data)
-//    {
-//        var_dump($data);
-//    }
 } 
