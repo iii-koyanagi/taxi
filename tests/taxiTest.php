@@ -33,6 +33,12 @@ class taxiTest extends \PHPUnit_Framework_TestCase
         $taxi = new taxi();
         $firstCity = $taxi->firstCityCheck($data);
 
-        $this->assertEquals(True, $firstCity);
+        $this->assertEquals(true, $firstCity);
+
+        $data = 'DFC';
+        $taxi = new taxi();
+        $firstCity = $taxi->firstCityCheck($data);
+
+        $this->assertEquals(false, $firstCity);
     }
 }
