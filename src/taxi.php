@@ -8,5 +8,5 @@ namespace TripleI\taxi;
 
 class taxi
 {
-    
+
 }
