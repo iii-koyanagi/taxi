@@ -50,9 +50,7 @@ class taxiTest extends \PHPUnit_Framework_TestCase
 
         $data = 'GE';
         $distance = new Distance();
-        $test = $distance->getDistance($data);
-
-
+        $test = $distance->getDistanceValue($data);
 
     }
 

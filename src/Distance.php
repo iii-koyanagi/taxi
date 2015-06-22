@@ -11,23 +11,22 @@ namespace TripleI\taxi;
 
 class Distance {
 
-    public function edit($data)
+    public function sectionArray($data)
     {
-        $count = strlen($data);
-        $arr = array();
-        for ($i = 0; $i <= $count; $i++) {
-            $rest = substr($data, $i, 2);
-            if (strlen($rest) === 2) {
-                array_push($arr, $rest);
+        $strLength = strlen($data);
+        $sectionArray = array();
+        for ($i = 0; $i <= $strLength; $i++) {
+            $section = substr($data, $i, 2);
+            if (strlen($section) === 2) {
+                array_push($sectionArray, $section);
             }
         }
-
-        return $arr;
+        return $sectionArray;
     }
 
-    public function getDistance($data)
+    public function getDistanceValue($section)
     {
-        $dis_arr = array(
+        $distancesArray = array(
             'AB' => 1090,
             'AC' => 180,
             'AD' => 540,
@@ -41,25 +40,25 @@ class Distance {
             'EG' => 1050);
 
         $check = false;
-        foreach ($dis_arr as $key => $value) {
-            if ($key === $data) {
-                $distance = $value;
+        foreach ($distancesArray as $key => $distance) {
+            if ($key === $section) {
+                $distancesValue = $distance;
                 $check = 1;
             }
         }
 
         if ($check === false) {
-            $one = substr($data, 0, 1);
-            $two = substr($data, 1, 1);
+            $one = substr($section, 0, 1);
+            $two = substr($section, 1, 1);
 
             $reverse = $two.$one;
-            foreach ($dis_arr as $key => $value) {
+            foreach ($distancesArray as $key => $distance) {
                 if ($key === $reverse) {
-                    $distance = $value;
+                    $distancesValue = $distance;
                 }
             }
         }
 
-        var_dump($distance);
+        var_dump($distancesValue);
     }
 } 
