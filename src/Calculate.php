@@ -11,9 +11,9 @@ namespace TripleI\taxi;
 
 class Calculate {
 
-    public function basicStatus($distanceValue, $mileStonesArray)
+    public function basicStatus($distanceValueWithMileStone)
     {
-        foreach ($distanceValue as $key => $value) {
+        foreach ($distanceValueWithMileStone as $key => $value) {
             if ($key === 0) {
                 if ($value[1] === 'Enrai') {
                     $basicDistance = 995;

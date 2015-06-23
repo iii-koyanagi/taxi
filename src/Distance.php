@@ -71,15 +71,14 @@ class Distance {
         return $distancesArray;
     }
 
-    public function mileStonesArray($distancesValue)
+    public function mileStones($distancesValue)
     {
         $mile = 0;
-        $mileStonesArray = array();
         foreach ($distancesValue as $key => $value) {
             $mile += $value[0];
-            array_push($mileStonesArray, $mile);
+            array_push($distancesValue[$key], $mile);
         }
 
-        return $mileStonesArray;
+        return $distancesValue;
     }
 } 

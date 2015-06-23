@@ -24,10 +24,11 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
         $distance = new Distance();
         $sectionArray = $distance->sectionArray($data);
         $distanceValue = $distance->getDistanceValue($sectionArray);
+        $distanceValueWithMileStone = $distance->mileStones($distanceValue);
 
-        $mileStonesArray = $distance->mileStonesArray($distanceValue);
+        $cal = new Calculate();
+        $basicStatus = $cal->basicStatus($distanceValueWithMileStone);
 
-        $calculate = new Calculate();
-        $basicStatus = $calculate->basicStatus($distanceValue, $mileStonesArray);
+        var_dump($basicStatus);
     }
 }
