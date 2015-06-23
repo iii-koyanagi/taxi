@@ -56,17 +56,17 @@ class Distance {
     private function getDistancesArray()
     {
         $distancesArray = array(
-            'AB' => array(1090, true),
-            'BC' => array(960, true),
-            'AC' => array(180, true),
-            'CF' => array(200, true),
-            'BG' => array(1270, true),
-            'AD' => array(540, false),
-            'CD' => array(400, false),
-            'FD' => array(510, false),
-            'DE' => array(720, false),
-            'FG' => array(230, false),
-            'EG' => array(1050, false));
+            'AB' => array(1090, 'Enrai'),
+            'BC' => array(960, 'Enrai'),
+            'AC' => array(180, 'Enrai'),
+            'CF' => array(200, 'Enrai'),
+            'BG' => array(1270, 'Enrai'),
+            'AD' => array(540, 'Tansu'),
+            'CD' => array(400, 'Tansu'),
+            'FD' => array(510, 'Tansu'),
+            'DE' => array(720, 'Tansu'),
+            'FG' => array(230, 'Tansu'),
+            'EG' => array(1050, 'Tansu'));
 
         return $distancesArray;
     }
