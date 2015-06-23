@@ -24,6 +24,7 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
         $sectionArray = $distance->sectionArray($data);
         $distanceValue = $distance->getDistanceValue($sectionArray);
 
-        var_dump($distanceValue);
+        $mileStonesArray = $distance->mileStonesArray($distanceValue);
+        var_dump($mileStonesArray);
     }
 }
