@@ -22,25 +22,25 @@ class taxi
 
         return $firstCity;
     }
-
-    public function startingDataArray($firstCity)
-    {
-        if ($firstCity === true) {
-            $distance = 995;
-            $fare = 400;
-            $addition = 60;
-
-            $startingDataArray = array($distance, $fare, $addition);
-        }
-
-        else {
-            $distance = 845;
-            $fare = 350;
-            $addition = 50;
-
-            $startingDataArray = array($distance, $fare, $addition);
-        }
-
-        return $startingDataArray;
-    }
+//
+//    public function startingDataArray($firstCity)
+//    {
+//        if ($firstCity === true) {
+//            $distance = 995;
+//            $fare = 400;
+//            $addition = 60;
+//
+//            $startingDataArray = array($distance, $fare, $addition);
+//        }
+//
+//        else {
+//            $distance = 845;
+//            $fare = 350;
+//            $addition = 50;
+//
+//            $startingDataArray = array($distance, $fare, $addition);
+//        }
+//
+//        return $startingDataArray;
+//    }
 }
