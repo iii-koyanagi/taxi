@@ -2,6 +2,7 @@
 
 namespace TripleI\Distance;
 
+use TripleI\taxi\Calculate;
 use TripleI\taxi\Distance;
 
 class DistanceTest extends \PHPUnit_Framework_TestCase
@@ -25,6 +26,8 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
         $distanceValue = $distance->getDistanceValue($sectionArray);
 
         $mileStonesArray = $distance->mileStonesArray($distanceValue);
-        var_dump($mileStonesArray);
+
+        $calculate = new Calculate();
+        $basicStatus = $calculate->basicStatus($distanceValue, $mileStonesArray);
     }
 }
