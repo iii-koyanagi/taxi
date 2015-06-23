@@ -29,6 +29,6 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
         $cal = new Calculate();
         $basicStatus = $cal->basicStatus($distanceValueWithMileStone);
 
-        var_dump($basicStatus);
+        $cal->cal($distanceValueWithMileStone, $basicStatus);
     }
 }

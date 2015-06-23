@@ -35,4 +35,23 @@ class Calculate {
 
         return $basicStatus;
     }
+
+    public function cal($distanceValueWithMileStone, $basicStatus)
+    {
+        $basicDistance = $basicStatus['basicDistance'];
+//        $last = end($distanceValueWithMileStone);
+//        $totalDistance = $last[2];
+
+
+        $check = false;
+        foreach ($distanceValueWithMileStone as $key => $value) {
+            if ($basicDistance < $value[2] && $check === false) {
+                $lastDistance = $distanceValueWithMileStone[$key-1][2];
+                $kurikoshiDistance = $basicDistance - $lastDistance;
+
+
+                $check = true;
+            } ;
+        }
+    }
 }
