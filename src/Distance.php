@@ -61,6 +61,6 @@ class Distance {
             }
         }
 
-        var_dump($distancesValue);
+        return $distancesValue;
     }
 } 

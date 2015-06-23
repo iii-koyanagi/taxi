@@ -47,7 +47,7 @@ class taxiTest extends \PHPUnit_Framework_TestCase
         $data = 'ADFC';
         $distance = new Distance();
         $sectionArray = $distance->sectionArray($data);
+        $distanceValue = $distance->getDistanceValue($sectionArray);
 
-        $distance->getDistanceValue($sectionArray);
     }
 }
