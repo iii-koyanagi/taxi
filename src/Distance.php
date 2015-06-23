@@ -27,17 +27,17 @@ class Distance {
     public function getDistanceValue($section)
     {
         $distancesArray = array(
-            'AB' => 1090,
-            'AC' => 180,
-            'AD' => 540,
-            'BC' => 960,
-            'BG' => 1270,
-            'CD' => 400,
-            'CF' => 200,
-            'FD' => 510,
-            'DE' => 720,
-            'FG' => 230,
-            'EG' => 1050);
+            'AB' => array(1090, true),
+            'BC' => array(960, true),
+            'AC' => array(180, true),
+            'CF' => array(200, true),
+            'BG' => array(1270, true),
+            'AD' => array(540, false),
+            'CD' => array(400, false),
+            'FD' => array(510, false),
+            'DE' => array(720, false),
+            'FG' => array(230, false),
+            'EG' => array(1050, false));
 
         $check = false;
         foreach ($distancesArray as $key => $distance) {
