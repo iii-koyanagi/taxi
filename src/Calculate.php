@@ -13,7 +13,6 @@ class Calculate {
 
     public function calculate($distanceValue)
     {
-
         foreach ($distanceValue as $key => $value) {
             if ($key === 0) {
                 if ($value[1] === true) {
@@ -30,7 +29,5 @@ class Calculate {
                 }
             }
         }
-
-        var_dump($calArr);
     }
 }
