@@ -49,7 +49,6 @@ class taxiTest extends \PHPUnit_Framework_TestCase
         $sectionArray = $distance->sectionArray($data);
         $distanceValue = $distance->getDistanceValue($sectionArray);
 
-        $calculate = new Calculate();
-        $calculate->calculate($distanceValue);
+        var_dump($distanceValue);
     }
 }
