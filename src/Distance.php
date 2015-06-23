@@ -24,7 +24,7 @@ class Distance {
         return $sectionArray;
     }
 
-    public function getDistanceValue($section)
+    public function getDistanceValue($sections)
     {
         $distancesArray = array(
             'AB' => array(1090, true),
@@ -39,26 +39,28 @@ class Distance {
             'FG' => array(230, false),
             'EG' => array(1050, false));
 
-        $check = false;
-        foreach ($distancesArray as $key => $distance) {
-            if ($key === $section) {
-                $distancesValue = $distance;
-                $check = 1;
-            }
-        }
-
-        if ($check === false) {
-            $one = substr($section, 0, 1);
-            $two = substr($section, 1, 1);
-
-            $reverse = $two.$one;
+        foreach ($sections as $section) {
+            $check = false;
             foreach ($distancesArray as $key => $distance) {
-                if ($key === $reverse) {
-                    $distancesValue = $distance;
+                if ($key === $section) {
+                    $distancesValue[] = $distance;
+                    $check = 1;
+                }
+            }
+
+            if ($check === false) {
+                $one = substr($section, 0, 1);
+                $two = substr($section, 1, 1);
+
+                $reverse = $two.$one;
+                foreach ($distancesArray as $key => $distance) {
+                    if ($key === $reverse) {
+                        $distancesValue[] = $distance;
+                    }
                 }
             }
         }
 
-        return $distancesValue;
+        var_dump($distancesValue);
     }
 } 
