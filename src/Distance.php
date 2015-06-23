@@ -24,27 +24,16 @@ class Distance {
         return $sectionArray;
     }
 
-    public function getDistanceValue($sections)
+    public function getDistanceValue($sectionArray)
     {
-        $distancesArray = array(
-            'AB' => array(1090, true),
-            'BC' => array(960, true),
-            'AC' => array(180, true),
-            'CF' => array(200, true),
-            'BG' => array(1270, true),
-            'AD' => array(540, false),
-            'CD' => array(400, false),
-            'FD' => array(510, false),
-            'DE' => array(720, false),
-            'FG' => array(230, false),
-            'EG' => array(1050, false));
+        $distancesArray = $this->getDistancesArray();
 
-        foreach ($sections as $section) {
+        foreach ($sectionArray as $section) {
             $check = false;
             foreach ($distancesArray as $key => $distance) {
                 if ($key === $section) {
                     $distancesValue[] = $distance;
-                    $check = 1;
+                    $check = true;
                 }
             }
 
@@ -62,5 +51,23 @@ class Distance {
         }
 
         return $distancesValue;
+    }
+
+    private function getDistancesArray()
+    {
+        $distancesArray = array(
+            'AB' => array(1090, true),
+            'BC' => array(960, true),
+            'AC' => array(180, true),
+            'CF' => array(200, true),
+            'BG' => array(1270, true),
+            'AD' => array(540, false),
+            'CD' => array(400, false),
+            'FD' => array(510, false),
+            'DE' => array(720, false),
+            'FG' => array(230, false),
+            'EG' => array(1050, false));
+
+        return $distancesArray;
     }
 } 
