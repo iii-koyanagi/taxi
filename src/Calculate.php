@@ -51,13 +51,5 @@ class Calculate {
         end($twoHundred);
         $lastKey = key($twoHundred);
         unset($twoHundred[$lastKey]);
-
-
-        foreach ($twoHundred as $key => $value) {
-            foreach ($distanceValueWithMileStone as $keys => $values) {
-
-                var_dump($values);
-            }
-        }
     }
 }
