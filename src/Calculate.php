@@ -45,13 +45,19 @@ class Calculate {
         $totalDistance = end($distanceValueWithMileStone)[3];
 
         while ($basicDistance < $totalDistance){
-            $twoHundreds[] = $basicDistance += 200;
+            $twoHundred[] = $basicDistance += 200;
         }
 
         end($twoHundred);
         $lastKey = key($twoHundred);
         unset($twoHundred[$lastKey]);
 
-        var_dump($twoHundred);
+
+        foreach ($twoHundred as $key => $value) {
+            foreach ($distanceValueWithMileStone as $keys => $values) {
+
+                var_dump($values);
+            }
+        }
     }
 }
