@@ -75,7 +75,7 @@ class Distance {
     {
         $mile = 0;
         foreach ($distancesValue as $key => $value) {
-            $mile += $value[0];
+            $mile += $value[1];
             array_push($distancesValue[$key], $mile);
         }
 

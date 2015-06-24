@@ -48,8 +48,6 @@ class Calculate {
         $check = false;
         foreach ($distanceValueWithMileStone as $key => $value) {
             if ($basicDistance > $value[2] && $check === false) {
-                $lastDistance = $distanceValueWithMileStone[$key-1][2];
-                $kurikoshiDistance = $basicDistance - $lastDistance;
 
                 $check = true;
             } ;
