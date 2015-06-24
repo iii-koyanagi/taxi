@@ -48,10 +48,10 @@ class Calculate {
             $twoHundreds[] = $basicDistance += 200;
         }
 
-        end($twoHundreds);
-        $lastKey = key($twoHundreds);
-        unset($twoHundreds[$lastKey]);
+        end($twoHundred);
+        $lastKey = key($twoHundred);
+        unset($twoHundred[$lastKey]);
 
-        var_dump($twoHundreds);
+        var_dump($twoHundred);
     }
 }
