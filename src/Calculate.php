@@ -42,15 +42,16 @@ class Calculate {
     public function cal($distanceValueWithMileStone, $basicStatus)
     {
         $basicDistance = $basicStatus['basicDistance'];
-//        $last = end($distanceValueWithMileStone);
-//        $totalDistance = $last[2];
+        $totalDistance = end($distanceValueWithMileStone)[3];
 
-        $check = false;
-        foreach ($distanceValueWithMileStone as $key => $value) {
-            if ($basicDistance > $value[2] && $check === false) {
-
-                $check = true;
-            } ;
+        while ($basicDistance < $totalDistance){
+            $twoHundreds[] = $basicDistance += 200;
         }
+
+        end($twoHundreds);
+        $lastKey = key($twoHundreds);
+        unset($twoHundreds[$lastKey]);
+
+        var_dump($twoHundreds);
     }
 }
