@@ -15,7 +15,10 @@ class Calculate {
     {
         foreach ($distanceValueWithMileStone as $key => $value) {
             if ($key === 0) {
-                if ($value[1] === 'Enrai') {
+                $firstAlphabet = substr($value[0], 0, 1);
+                $enrai = array('A', 'B', 'C');
+
+                if (in_array($firstAlphabet, $enrai)) {
                     $basicDistance = 995;
                     $basicFee = 400;
                     $addingFee = 60;
@@ -42,14 +45,12 @@ class Calculate {
 //        $last = end($distanceValueWithMileStone);
 //        $totalDistance = $last[2];
 
-
         $check = false;
         foreach ($distanceValueWithMileStone as $key => $value) {
             if ($basicDistance < $value[2] && $check === false) {
                 $lastDistance = $distanceValueWithMileStone[$key-1][2];
                 $kurikoshiDistance = $basicDistance - $lastDistance;
-
-
+                
                 $check = true;
             } ;
         }
