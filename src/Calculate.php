@@ -22,11 +22,36 @@ class Calculate {
                     $basicDistance = 995;
                     $basicFee = 400;
                     $addingFee = 60;
+
+                    if ($basicDistance < $value[3]) {
+                        $basicFee += 60;
+
+                        $nihyaku = $value[3] - $basicDistance;
+                        if ($nihyaku > 200) {
+                            $answer = $nihyaku / 200;
+                            $roundAnswer = round($answer);
+                            $firstAdd = 60 * $roundAnswer;
+                            $basicFee += $firstAdd;
+                        }
+                    }
                 }
+
                 else {
                     $basicDistance = 845;
                     $basicFee = 350;
                     $addingFee = 50;
+
+                    if ($basicDistance < $value[3]) {
+                        $basicFee += 50;
+
+                        $nihyaku = $value[3] - $basicDistance;
+                        if ($nihyaku > 200) {
+                            $answer = $nihyaku / 200;
+                            $roundAnswer = round($answer);
+                            $firstAdd = 50 * $roundAnswer;
+                            $basicFee += $firstAdd;
+                        }
+                    }
                 }
             }
         }
