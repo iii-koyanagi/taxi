@@ -29,23 +29,9 @@ class Distance {
         $distancesArray = $this->getDistancesArray();
 
         foreach ($sectionArray as $section) {
-            $check = false;
             foreach ($distancesArray as $key => $distance) {
                 if ($key === $section) {
                     $distancesValue[] = $distance;
-                    $check = true;
-                }
-            }
-
-            if ($check === false) {
-                $one = substr($section, 0, 1);
-                $two = substr($section, 1, 1);
-
-                $reverse = $two.$one;
-                foreach ($distancesArray as $key => $distance) {
-                    if ($key === $reverse) {
-                        $distancesValue[] = $distance;
-                    }
                 }
             }
         }
@@ -66,7 +52,20 @@ class Distance {
             'FD' => array('FD', 510, 'Tansu'),
             'DE' => array('DE', 720, 'Tansu'),
             'FG' => array('FG', 230, 'Tansu'),
-            'EG' => array('EG', 1050, 'Tansu'));
+            'EG' => array('EG', 1050, 'Tansu'),
+
+            'BA' => array('BA', 1090, 'Enrai'),
+            'CB' => array('CB', 960, 'Enrai'),
+            'CA' => array('CA', 180, 'Enrai'),
+            'FC' => array('FC', 200, 'Enrai'),
+            'GB' => array('GB', 1270, 'Enrai'),
+            'DA' => array('DA', 540, 'Tansu'),
+            'DC' => array('DC', 400, 'Tansu'),
+            'DF' => array('DF', 510, 'Tansu'),
+            'ED' => array('ED', 720, 'Tansu'),
+            'GF' => array('GF', 230, 'Tansu'),
+            'GE' => array('GE', 1050, 'Tansu')
+        );
 
         return $distancesArray;
     }
