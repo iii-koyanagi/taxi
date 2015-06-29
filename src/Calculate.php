@@ -24,14 +24,26 @@ class Calculate {
                     $addingFee = 60;
 
                     if ($basicDistance < $value[3]) {
-                        $basicFee += 60;
+                        if ($distanceValueWithMileStone[0][2] === 'Enrai') {
+                            $basicFee += 60;
+                            $nihyaku = $value[3] - $basicDistance;
+                            if ($nihyaku > 200) {
+                                $answer = $nihyaku / 200;
+                                $roundAnswer = round($answer);
+                                $firstAdd = 60 * $roundAnswer;
+                                $basicFee += $firstAdd;
+                            }
+                        }
 
-                        $nihyaku = $value[3] - $basicDistance;
-                        if ($nihyaku > 200) {
-                            $answer = $nihyaku / 200;
-                            $roundAnswer = round($answer);
-                            $firstAdd = 60 * $roundAnswer;
-                            $basicFee += $firstAdd;
+                        else {
+                            $basicFee += 50;
+                            $nihyaku = $value[3] - $basicDistance;
+                            if ($nihyaku > 200) {
+                                $answer = $nihyaku / 200;
+                                $roundAnswer = round($answer);
+                                $firstAdd = 50 * $roundAnswer;
+                                $basicFee += $firstAdd;
+                            }
                         }
                     }
                 }
@@ -42,14 +54,26 @@ class Calculate {
                     $addingFee = 50;
 
                     if ($basicDistance < $value[3]) {
-                        $basicFee += 50;
+                        if ($distanceValueWithMileStone[0][2] === 'Enrai') {
+                            $basicFee += 60;
+                            $nihyaku = $value[3] - $basicDistance;
+                            if ($nihyaku > 200) {
+                                $answer = $nihyaku / 200;
+                                $roundAnswer = round($answer);
+                                $firstAdd = 60 * $roundAnswer;
+                                $basicFee += $firstAdd;
+                            }
+                        }
 
-                        $nihyaku = $value[3] - $basicDistance;
-                        if ($nihyaku > 200) {
-                            $answer = $nihyaku / 200;
-                            $roundAnswer = round($answer);
-                            $firstAdd = 50 * $roundAnswer;
-                            $basicFee += $firstAdd;
+                        else {
+                            $basicFee += 50;
+                            $nihyaku = $value[3] - $basicDistance;
+                            if ($nihyaku > 200) {
+                                $answer = $nihyaku / 200;
+                                $roundAnswer = round($answer);
+                                $firstAdd = 50 * $roundAnswer;
+                                $basicFee += $firstAdd;
+                            }
                         }
                     }
                 }
