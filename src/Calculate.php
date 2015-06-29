@@ -41,6 +41,14 @@ class Calculate {
 
     public function cal($distanceValueWithMileStone, $basicStatus)
     {
+        $end = end($distanceValueWithMileStone);
+        $last = $end[3];
+
+        if ($last < $basicStatus['basicDistance']) {
+            $total = $basicStatus['basicFee'];
+        }
+
+        else {
         $basicDistance = $basicStatus['basicDistance'];
         $totalDistance = end($distanceValueWithMileStone)[3];
 
@@ -99,6 +107,7 @@ class Calculate {
         $two = $enrai * 60;
         $three = $tansu * 50;
         $total = $one + $two + $three;
+        }
 
         return $total;
     }
