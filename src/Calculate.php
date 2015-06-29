@@ -90,18 +90,7 @@ class Calculate {
             $tansu = 0;
             foreach ($distanceValueWithMileStone as $key => $value){
                 foreach ($twoHundred as $keys => $values) {
-                    if ($count === 1) {
-                        if ($values > $basicStatus['basicDistance']) {
-                            if ($value[2] === 'Enrai') {
-                                $enrai += 1;
-                            }
-                            else {
-                                $tansu += 1;
-                            }
-                        }
-                    }
-
-                    elseif ($key > 0) {
+                    if ($key > 0) {
                         if ($distanceValueWithMileStone[$key-1][3] < $values && $values < $value[3]) {
                             if ($value[2] === 'Enrai') {
                                 $enrai += 1;
