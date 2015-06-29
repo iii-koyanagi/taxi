@@ -70,15 +70,28 @@ class Calculate {
         }
 
         foreach ($distanceValueWithMileStone as $key => $value){
-            if ($key > 0) {
-                if ($distanceValueWithMileStone[$key - 1][3] < $basicStatus['basicDistance'] && $basicStatus['basicDistance'] < $value[3]) {
-                    if ($value[2] === 'Enrai') {
-                        $enrai += 1;
-                    }
-                    else {
-                        $tansu += 1;
-                    }
-                };
+            $count = count($distanceValueWithMileStone);
+
+            if ($count === 1) {
+                if ($value[2] === 'Enrai') {
+                    $enrai += 1;
+                }
+                else {
+                    $tansu += 1;
+                }
+            }
+
+            else{
+                if ($key > 0) {
+                    if ($distanceValueWithMileStone[$key - 1][3] < $basicStatus['basicDistance'] && $basicStatus['basicDistance'] < $value[3]) {
+                        if ($value[2] === 'Enrai') {
+                            $enrai += 1;
+                        }
+                        else {
+                            $tansu += 1;
+                        }
+                    };
+                }
             }
         }
 

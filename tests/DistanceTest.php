@@ -20,7 +20,7 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
 
     public function testDistance()
     {
-        $data = 'AB';
+        $data = 'ADFC';
         $distance = new Distance();
         $sectionArray = $distance->sectionArray($data);
         $distanceValue = $distance->getDistanceValue($sectionArray);
@@ -29,10 +29,8 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
         $cal = new Calculate();
         $basicStatus = $cal->basicStatus($distanceValueWithMileStone);
         $total = $cal->cal($distanceValueWithMileStone, $basicStatus);
-
-        var_dump($total);
     }
-
+//
 //    public function testArray()
 //    {
 //        $data = array(
