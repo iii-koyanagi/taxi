@@ -66,7 +66,7 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
             'GBADEGFDC' => 1680);
 
         foreach ($data as $key => $value) {
-            $one_data = '$key';
+            $one_data = $key;
             $distance = new Distance();
             $sectionArray = $distance->sectionArray($one_data);
             $distanceValue = $distance->getDistanceValue($sectionArray);
@@ -74,7 +74,10 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
 
             $cal = new Calculate();
             $basicStatus = $cal->basicStatus($distanceValueWithMileStone);
-            $cal->cal($distanceValueWithMileStone, $basicStatus);
+            $total = $cal->cal($distanceValueWithMileStone, $basicStatus);
+
+
+            $this->assertEquals($total, $value);
         }
     }
 }
