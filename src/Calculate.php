@@ -49,64 +49,79 @@ class Calculate {
         }
 
         else {
-        $basicDistance = $basicStatus['basicDistance'];
-        $totalDistance = end($distanceValueWithMileStone)[3];
+            $basicDistance = $basicStatus['basicDistance'];
+            $totalDistance = end($distanceValueWithMileStone)[3];
 
-        while ($basicDistance < $totalDistance){
-            $twoHundred[] = $basicDistance += 200;
-        }
+            while ($basicDistance < $totalDistance){
+                $twoHundred[] = $basicDistance += 200;
+            }
 
-        end($twoHundred);
-        $lastKey = key($twoHundred);
-        unset($twoHundred[$lastKey]);
+            end($twoHundred);
+            $lastKey = key($twoHundred);
+            unset($twoHundred[$lastKey]);
 
-        $enrai = 0;
-        $tansu = 0;
-        foreach ($distanceValueWithMileStone as $key => $value){
-            foreach ($twoHundred as $keys => $values) {
-                if ($key > 0) {
-                    if ($distanceValueWithMileStone[$key-1][3] < $values && $values < $value[3]) {
-                        if ($value[2] === 'Enrai') {
-                            $enrai += 1;
+            $count = count($distanceValueWithMileStone);
+            $enrai = 0;
+            $tansu = 0;
+            foreach ($distanceValueWithMileStone as $key => $value){
+                foreach ($twoHundred as $keys => $values) {
+
+
+
+                    if ($count === 1) {
+                        if ($values > $basicStatus['basicDistance']) {
+                            if ($value[2] === 'Enrai') {
+                                $enrai += 1;
+                            }
+                            else {
+                                $tansu += 1;
+                            }
                         }
-                        else {
-                            $tansu += 1;
+                    }
+
+                    elseif ($key > 0) {
+                        if ($distanceValueWithMileStone[$key-1][3] < $values && $values < $value[3]) {
+                            if ($value[2] === 'Enrai') {
+                                $enrai += 1;
+                            }
+                            else {
+                                $tansu += 1;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        foreach ($distanceValueWithMileStone as $key => $value){
-            $count = count($distanceValueWithMileStone);
+            foreach ($distanceValueWithMileStone as $key => $value){
+                $count = count($distanceValueWithMileStone);
 
-            if ($count === 1) {
-                if ($value[2] === 'Enrai') {
-                    $enrai += 1;
+                if ($count === 1) {
+                    if ($value[2] === 'Enrai') {
+                        $enrai += 1;
+                    }
+                    else {
+                        $tansu += 1;
+                    }
                 }
-                else {
-                    $tansu += 1;
+
+                else{
+                    if ($key > 0) {
+                        if ($distanceValueWithMileStone[$key - 1][3] < $basicStatus['basicDistance'] && $basicStatus['basicDistance'] < $value[3]) {
+                            if ($value[2] === 'Enrai') {
+                                $enrai += 1;
+                            }
+                            else {
+                                $tansu += 1;
+                            }
+                        };
+                    }
                 }
             }
 
-            else{
-                if ($key > 0) {
-                    if ($distanceValueWithMileStone[$key - 1][3] < $basicStatus['basicDistance'] && $basicStatus['basicDistance'] < $value[3]) {
-                        if ($value[2] === 'Enrai') {
-                            $enrai += 1;
-                        }
-                        else {
-                            $tansu += 1;
-                        }
-                    };
-                }
-            }
-        }
-
-        $one = $basicStatus['basicFee'];
-        $two = $enrai * 60;
-        $three = $tansu * 50;
-        $total = $one + $two + $three;
+            $one = $basicStatus['basicFee'];
+            $two = $enrai * 60;
+            $three = $tansu * 50;
+            $total = $one + $two + $three;
         }
 
         return $total;
