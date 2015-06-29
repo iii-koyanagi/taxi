@@ -79,7 +79,9 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
             $total = $cal->cal($distanceValueWithMileStone, $basicStatus);
 
 
-            $this->assertEquals($total, $value);
+            if ($total != $value) {
+                var_dump($key.':(誤)'.$total.'!= (正)'.$value);
+            }
         }
     }
 }
