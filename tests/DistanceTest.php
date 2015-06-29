@@ -20,7 +20,7 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
 
     public function testDistance()
     {
-        $data = 'ADFC';
+        $data = 'EDACFGE';
         $distance = new Distance();
         $sectionArray = $distance->sectionArray($data);
         $distanceValue = $distance->getDistanceValue($sectionArray);

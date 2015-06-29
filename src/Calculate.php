@@ -70,6 +70,20 @@ class Calculate {
             }
         }
 
+
+        foreach ($distanceValueWithMileStone as $key => $value){
+            if ($key > 0) {
+                if ($distanceValueWithMileStone[$key - 1][3] < $basicStatus['basicDistance'] && $basicStatus['basicDistance'] < $value[3]) {
+                    if ($value[2] === 'Enrai') {
+                        $enrai += 1;
+                    }
+                    else {
+                        $tansu += 1;
+                    }
+                };
+            }
+        }
+
         $one = $basicStatus['basicFee'];
         $two = $enrai * 60;
         $three = $tansu * 50;
@@ -77,6 +91,5 @@ class Calculate {
         $total = $one + $two + $three;
 
         var_dump($total);
-
     }
 }
