@@ -51,5 +51,32 @@ class Calculate {
         end($twoHundred);
         $lastKey = key($twoHundred);
         unset($twoHundred[$lastKey]);
+
+        $enrai = 0;
+        $tansu = 0;
+        foreach ($distanceValueWithMileStone as $key => $value){
+            foreach ($twoHundred as $keys => $values) {
+                if ($key > 1) {
+                    if ($distanceValueWithMileStone[$key-1][3] < $values && $values < $value[3]) {
+//                        var_dump($distanceValueWithMileStone[$key-1][3] .'<'. $values .'<'. $value[3]);
+                        if ($value[2] === 'Enrai') {
+                            $enrai += 1;
+                        }
+                        else {
+                            $tansu += 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        $one = $basicStatus['basicFee'];
+        $two = $enrai * 60;
+        $three = $tansu * 50;
+
+        $total = $one + $two + $three;
+
+        var_dump($total);
+
     }
 }
