@@ -56,7 +56,7 @@ class Calculate {
         $tansu = 0;
         foreach ($distanceValueWithMileStone as $key => $value){
             foreach ($twoHundred as $keys => $values) {
-                if ($key > 1) {
+                if ($key > 0) {
                     if ($distanceValueWithMileStone[$key-1][3] < $values && $values < $value[3]) {
 //                        var_dump($distanceValueWithMileStone[$key-1][3] .'<'. $values .'<'. $value[3]);
                         if ($value[2] === 'Enrai') {
