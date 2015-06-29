@@ -58,7 +58,6 @@ class Calculate {
             foreach ($twoHundred as $keys => $values) {
                 if ($key > 0) {
                     if ($distanceValueWithMileStone[$key-1][3] < $values && $values < $value[3]) {
-//                        var_dump($distanceValueWithMileStone[$key-1][3] .'<'. $values .'<'. $value[3]);
                         if ($value[2] === 'Enrai') {
                             $enrai += 1;
                         }
@@ -69,7 +68,6 @@ class Calculate {
                 }
             }
         }
-
 
         foreach ($distanceValueWithMileStone as $key => $value){
             if ($key > 0) {
