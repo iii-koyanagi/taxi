@@ -28,7 +28,41 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
 
         $cal = new Calculate();
         $basicStatus = $cal->basicStatus($distanceValueWithMileStone);
-
         $cal->cal($distanceValueWithMileStone, $basicStatus);
+    }
+
+    public function testArray()
+    {
+        $data = array(
+            'ADFC' => 510,
+            'CFDA' => 500,
+            'AB' => 460,
+            'BA' => 460,
+            'CD' => 400,
+            'DC' => 350,
+            'BG' => 520,
+            'GB' => 530,
+            'FDA' => 450,
+            'ADF' => 450,
+            'FDACB' => 750,
+            'BCADF' => 710,
+            'EDACB' => 800,
+            'BCADE' => 810,
+            'EGFCADE' => 920,
+            'EDACFGE' => 910,
+            'ABCDA' => 960,
+            'ADCBA' => 1000,
+            'BADCFGB' => 1180,
+            'BGFCDAB' => 1180,
+            'CDFC' => 460,
+            'CFDC' => 450,
+            'ABGEDA' => 1420,
+            'ADEGBA' => 1470,
+            'CFGB' => 640,
+            'BGFC' => 630,
+            'ABGEDFC' => 1480,
+            'CFDEGBA' => 1520,
+            'CDFGEDABG' => 1770,
+            'GBADEGFDC' => 1680);
     }
 }
