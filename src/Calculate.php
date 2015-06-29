@@ -109,7 +109,6 @@ class Calculate {
             $lastKey = key($twoHundred);
             unset($twoHundred[$lastKey]);
 
-            $count = count($distanceValueWithMileStone);
             $enrai = 0;
             $tansu = 0;
             foreach ($distanceValueWithMileStone as $key => $value){
@@ -128,7 +127,6 @@ class Calculate {
             }
 
             foreach ($distanceValueWithMileStone as $key => $value){
-
                     if ($key > 0) {
                         if ($distanceValueWithMileStone[$key - 1][3] < $basicStatus['basicDistance'] && $basicStatus['basicDistance'] < $value[3]) {
                             if ($value[2] === 'Enrai') {
