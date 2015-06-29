@@ -85,9 +85,8 @@ class Calculate {
         $one = $basicStatus['basicFee'];
         $two = $enrai * 60;
         $three = $tansu * 50;
-
         $total = $one + $two + $three;
 
-        var_dump($total);
+        return $total;
     }
 }

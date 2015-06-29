@@ -64,5 +64,17 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
             'CFDEGBA' => 1520,
             'CDFGEDABG' => 1770,
             'GBADEGFDC' => 1680);
+
+        foreach ($data as $key => $value) {
+            $one_data = '$key';
+            $distance = new Distance();
+            $sectionArray = $distance->sectionArray($one_data);
+            $distanceValue = $distance->getDistanceValue($sectionArray);
+            $distanceValueWithMileStone = $distance->mileStones($distanceValue);
+
+            $cal = new Calculate();
+            $basicStatus = $cal->basicStatus($distanceValueWithMileStone);
+            $cal->cal($distanceValueWithMileStone, $basicStatus);
+        }
     }
 }
